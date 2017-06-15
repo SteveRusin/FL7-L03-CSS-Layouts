@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: #0000ff;
+    font-size: 25px;
+    margin: 0 25px;
+    transition: 0.4s;
+    text-shadow: 0 0 2px black;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    transform: scale(1.5);
+    color: red;
+    text-shadow: 0 0 15px red;
+}
+
+a:after {
+    display: block;
+    content: '';
+    height: 1px;
+    width: 0%;
+    background: red;
+    transition: 0.4s;
+}
+
+a:hover:after {
+    width: 100%;
+}
