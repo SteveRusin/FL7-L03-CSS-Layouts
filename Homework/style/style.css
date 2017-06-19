@@ -1,0 +1,431 @@
+/*The validator - https://jigsaw.w3.org/css-validator/ - says the code doesn't valid totally. It doesn't recognize css variables and ::selection pseudoclass. I used it though, becouse it was on previous lectures and i decided to use it here. */
+:root {
+    --main-color: #000;
+    --bottom-color: #fff;
+}
+
+@font-face {
+    font-family: Fugue;
+    src: url(../fonts/fugue_regular.woff);
+}
+
+@keyframes hover-before {
+    from {
+        left: -500px;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@keyframes hover-after {
+    from {
+        left: 0;
+    }
+    to {
+        left: 300px;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Fugue;
+}
+
+*::selection {
+    background: #C2B7B9;
+}
+
+body,
+html {
+    width: 100%;
+    margin: 0 auto;
+}
+
+a {
+    display: inline-block;
+    color: var(--main-color);
+    font-size: 1.25em;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 3em;
+    align-self: flex-end;
+}
+
+h2 {
+    font-size: 50px;
+}
+
+p,
+h3 {
+    font-size: 1.3em;
+}
+
+
+.flex {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.flex-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.right {
+    width: 50%;
+    padding: 150px 0;
+}
+
+.layer-1 {
+    background: linear-gradient(90deg, rgba(153, 218, 255, 1) 0%, rgba(255, 255, 0, 1) 100%);
+}
+
+.layer-2 {
+    background: linear-gradient(270deg, rgba(0, 255, 0, 0) 0%, rgba(59, 7, 52, 0.23) 9%, rgba(143, 111, 0, 0.47) 18%, rgba(255, 0, 0, 0.68) 25%, rgba(156, 0, 0, 1) 35%, rgba(0, 0, 0, 0.27) 51%, rgba(255, 255, 0, 0.11) 75%, rgba(255, 165, 0, 0.05) 90%, rgba(255, 165, 0, 0) 100%);
+}
+
+header.flex {
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 25px;
+    padding: 40px 40px;
+}
+
+header img {
+    height: 300px;
+    width: 350px;
+}
+
+.title-nav-wrapper {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+}
+
+nav a {
+    padding: 0 25px;
+}
+
+.link a:after,
+.contacts address:after,
+footer .mail a:after {
+    display: block;
+    content: '';
+    width: 100%;
+    background: var(--main-color);
+    height: 2px;
+    width: 0%;
+    transition: 0.2s linear;
+}
+
+nav .active:after {
+    width: 100%;
+}
+
+.link a:hover:after,
+.contacts .address:hover address:after,
+footer .mail a:hover:after {
+    width: 100%;
+}
+
+main {
+    background: white;
+    margin-top: -170px;
+    padding: 250px 80px 0;
+}
+
+p {
+    padding: 15px 0;
+}
+
+article h2 {
+    width: 50%;
+    padding: 0 100px;
+    margin: 100px 0;
+    position: relative;
+}
+
+div + article h2:before {
+    display: block;
+    position: absolute;
+    content: url('../img/arrow.svg');
+    height: 100px;
+    width: 100px;
+    left: 0;
+    top: -25px;
+}
+
+.first-img-wrapper {
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin-top: -150px;
+}
+
+.first-img-wrapper img:first-child {
+    width: 40%;
+    height: 20%;
+    transform: translate(25%, 40%);
+}
+
+.first-img-wrapper img:nth-child(2) {
+    width: 45%;
+    height: 100%;
+}
+
+.second-img-wrapper {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.second-img-wrapper img:first-child {
+    width: 40%;
+}
+
+.second-img-wrapper img:nth-child(2) {
+    width: 30%;
+    transform: translate(0, -25%);
+}
+
+.second-img-wrapper + .flex-right > .right {
+    transform: translate(0, -45%);
+    padding: 0;
+}
+
+article + article h2 {
+    width: 55%;
+    font-size: 40px;
+    padding-top: 150px;
+}
+
+.flex section {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.flex section h3 {
+    font-size: 3em;
+}
+
+.flex i {
+    transform: scaleY(2);
+    padding: 25px 0;
+}
+
+.third-img-wrapper {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.third-img-wrapper img:first-child {
+    width: 60%;
+    height: 100%;
+}
+
+.third-img-wrapper img:nth-child(2) {
+    width: 22%;
+    height: 45%;
+    transform: translate(20%, 20%);
+}
+
+article + article .right {
+    padding: 150px 0 0;
+}
+
+.fourth-img-wrapper {
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    margin-top: -150px;
+    padding-right: 50px;
+}
+
+.fourth-img-wrapper img:first-child {
+    width: 40%;
+    height: 20%;
+}
+
+.fourth-img-wrapper img:nth-child(2) {
+    width: 22%;
+    height: 15%;
+    transform: translate(-25%, 55%);
+}
+
+.questions a,
+article + .flex a {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 150px 0;
+    padding-bottom: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.questions a:after,
+.questions a:before,
+article + .flex a:after,
+article + .flex a:before {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: var(--main-color);
+}
+
+.questions a:before,
+.questions a:after,
+footer .footer-nav a:after,
+.contacts address:after,
+footer .mail a:after {
+    background: var(--bottom-color);
+}
+
+.questions a:before,
+article + .flex a:before {
+    bottom: 0;
+    left: -500px;
+}
+
+.questions a:hover:after,
+article + .flex a:hover:after {
+    animation: hover-after 0.5s cubic-bezier(0, .7, .82, .69) forwards;
+}
+
+.questions a:hover:before,
+article + .flex a:hover:before {
+    animation: hover-before 0.8s cubic-bezier(.41, .41, .58, .57) 0.2s forwards;
+}
+
+footer,
+footer a {
+    color: var(--bottom-color);
+}
+
+footer {
+    padding: 0 80px 0;
+}
+
+footer section,
+footer div {
+    text-align: center;
+}
+
+footer h2 {
+    width: 70%;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+footer img {
+    height: 75%;
+    width: 80%;
+}
+
+footer .flex {
+    justify-content: center;
+}
+
+footer section {
+    padding-bottom: 200px;
+}
+
+footer .flex > figure {
+    width: 30%;
+    height: 100%;
+    padding-bottom: 50px;
+}
+
+footer .flex h4,
+footer .flex span {
+    font-size: 1.5em;
+    padding: 10px 0;
+}
+
+footer section:nth-child(2) img {
+    width: 15%;
+    height: 100%;
+    padding: 90px;
+}
+
+.questions {
+    border-top: 3px solid var(--bottom-color);
+    margin-bottom: -100px;
+}
+
+.questions a {
+    transform: translate(0, -150%)
+}
+
+footer .footer-nav {
+    justify-content: space-between;
+}
+
+footer .contacts {
+    justify-content: space-between;
+    font-size: 1.25em;
+    padding-top: 150px;
+    margin-top: 50px;
+    border-top: 1px solid var(--bottom-color);
+}
+
+.contacts address,
+footer .mail a {
+    padding: 5px 0;
+}
+
+.contacts address {
+    font-style: normal;
+    text-align: left;
+    cursor: pointer;
+}
+
+.contacts .address:hover address:nth-child(2):after {
+    width: 68%;
+}
+
+.contacts address:nth-child(2):after {
+    transition-delay: 0.2s;
+}
+
+footer .mail {
+    flex-direction: column;
+}
+
+.social {
+    padding-right: 120px;
+}
+
+.social a {
+    background-image: url('../img/social.png');
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+    margin-right: 15px;
+    transition: 0.4s;
+    border-radius: 5px;
+}
+
+.fb {
+    background-position: 0 0;
+}
+
+.tw {
+    background-position: -30px 0;
+}
+
+.in {
+    background-position: -60px 0;
+}
+
+.be {
+    background-position: -90px 0;
+}
+
+.social a:hover {
+    opacity: .5;
+}
