@@ -254,12 +254,13 @@ article + article .right {
     height: 15%;
     transform: translate(-25%, 55%);
 }
-
+article + .flex a {
+    margin: 150px 0;
+}
 .questions a,
 article + .flex a {
     font-size: 25px;
     font-weight: bold;
-    margin: 150px 0;
     padding-bottom: 2px;
     position: relative;
     overflow: hidden;
@@ -354,12 +355,9 @@ footer section:nth-child(2) img {
 
 .questions {
     border-top: 3px solid var(--bottom-color);
-    margin-bottom: -100px;
+    padding: 50px 0 100px;
 }
 
-.questions a {
-    transform: translate(0, -150%)
-}
 
 footer .footer-nav {
     justify-content: space-between;
